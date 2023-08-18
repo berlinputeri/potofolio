@@ -1,0 +1,13 @@
+function getFolderFileUrls() {
+  var folder = DriveApp.getFolderById('1hfDXluLuYat65X3BhTVuRJJ-TGFZeJlu');
+  var files = folder.getFiles();
+  var fileUrls = [];
+  
+  while (files.hasNext()) {
+    var file = files.next();
+    var fileUrl = file.getUrl();
+    var name = file.getName();
+    // fileUrls.push(fileUrl);
+    Logger.log(name + ": " + fileUrl)
+  }
+}
