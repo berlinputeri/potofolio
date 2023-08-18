@@ -1,0 +1,59 @@
+function moveDataPD() {
+var targetfile = "1CSYUvKmJWYT4nhW9rGpLL-NHsqGje_fJ5io0AJo8xow";
+var source="1SZvKlAkTOWt2exmi0TiuKCEfj0zTMjGTJbkpmwnH5Qo";
+var dailySheet = SpreadsheetApp.openById(source).getSheetByName('Temporary1');
+var appendSheet = SpreadsheetApp.openById(targetfile).getSheetByName('Platform Digital');
+var values = dailySheet.getRange("Temporary1!2:" + dailySheet.getLastRow()).getValues();
+values = values.filter(a=>a[0]); //gets rid of blank rows. filters based on the first column (index 0).
+appendSheet.getRange(appendSheet.getLastRow()+1,3,values.length,values[0].length).setValues(values);
+}
+
+function moveDataLPDani() {
+var targetfile = "1CSYUvKmJWYT4nhW9rGpLL-NHsqGje_fJ5io0AJo8xow";
+var source="1SZvKlAkTOWt2exmi0TiuKCEfj0zTMjGTJbkpmwnH5Qo";
+var dailySheet = SpreadsheetApp.openById(source).getSheetByName('Temporary2');
+var appendSheet = SpreadsheetApp.openById(targetfile).getSheetByName('Lembaga Pelatihan (Dani)');
+var values = dailySheet.getRange("Temporary2!2:" + dailySheet.getLastRow()).getValues();
+values = values.filter(a=>a[0]); //gets rid of blank rows. filters based on the first column (index 0).
+appendSheet.getRange(appendSheet.getLastRow()+1,3,values.length,values[0].length).setValues(values);
+}
+
+function moveDataPK() {
+var targetfile = "1CSYUvKmJWYT4nhW9rGpLL-NHsqGje_fJ5io0AJo8xow";
+var source="1SZvKlAkTOWt2exmi0TiuKCEfj0zTMjGTJbkpmwnH5Qo";
+var dailySheet = SpreadsheetApp.openById(source).getSheetByName('Temporary3');
+var appendSheet = SpreadsheetApp.openById(targetfile).getSheetByName('Pihak Ketiga');
+var values = dailySheet.getRange("Temporary3!2:" + dailySheet.getLastRow()).getValues();
+values = values.filter(a=>a[0]); //gets rid of blank rows. filters based on the first column (index 0).
+appendSheet.getRange(appendSheet.getLastRow()+1,3,values.length,values[0].length).setValues(values);
+}
+
+function moveDataURL() {
+var targetfile = "1CSYUvKmJWYT4nhW9rGpLL-NHsqGje_fJ5io0AJo8xow";
+var source="1SZvKlAkTOWt2exmi0TiuKCEfj0zTMjGTJbkpmwnH5Qo";
+var dailySheet = SpreadsheetApp.openById(source).getSheetByName('Temporary4');
+var appendSheet = SpreadsheetApp.openById(targetfile).getSheetByName('Lembaga Pelatihan');
+var values = dailySheet.getRange("Temporary4!2:" + dailySheet.getLastRow()).getValues();
+values = values.filter(a=>a[0]); //gets rid of blank rows. filters based on the first column (index 0).
+appendSheet.getRange(appendSheet.getLastRow()+1,3,values.length,values[0].length).setValues(values);
+}
+
+function moveDataLPEndang() {
+var targetfile = "1CSYUvKmJWYT4nhW9rGpLL-NHsqGje_fJ5io0AJo8xow";
+var source="1SZvKlAkTOWt2exmi0TiuKCEfj0zTMjGTJbkpmwnH5Qo";
+var dailySheet = SpreadsheetApp.openById(source).getSheetByName('Temporary5');
+var appendSheet = SpreadsheetApp.openById(targetfile).getSheetByName('Lembaga Pelatihan (Endang)');
+var values = dailySheet.getRange("Temporary5!2:" + dailySheet.getLastRow()).getValues();
+values = values.filter(a=>a[0]); //gets rid of blank rows. filters based on the first column (index 0).
+appendSheet.getRange(appendSheet.getLastRow()+1,3,values.length,values[0].length).setValues(values);
+}
+
+function moveDataLPElen() {
+var targetfile = "1CSYUvKmJWYT4nhW9rGpLL-NHsqGje_fJ5io0AJo8xow";
+var source="1SZvKlAkTOWt2exmi0TiuKCEfj0zTMjGTJbkpmwnH5Qo";
+var dailySheet = SpreadsheetApp.openById(source).getSheetByName('Temporary6');
+var appendSheet = SpreadsheetApp.openById(targetfile).getSheetByName('Lembaga Pelatihan (Elen)');
+var values = dailySheet.getRange("Temporary6!2:" + dailySheet.getLastRow()).getValues();
+values = values.filter(a=>a[0]); //gets rid of blank rows. filters based on the first column (index 0).
+appendSheet.getRange(appendSheet.getLastRow()+1,3,values.length,values[0].length).setValues(values);
+}
