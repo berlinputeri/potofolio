@@ -1,0 +1,26 @@
+function exportsildetopdf() {
+  var folderId = "1GnhdmzPMwBsHIcJbsfcaaSVaCjpelDUL"; // Ganti dengan ID folder tempat presentasi-presentasi berada
+  var outputFolderId = "1LBUG_tBI37UOKQnODcrycvPcULigYqh9"; // Ganti dengan ID folder tempat hasil PDF akan disimpan
+
+  var folder = DriveApp.getFolderById(folderId);
+  var outputFolder = DriveApp.getFolderById(outputFolderId);
+
+  var files = folder.getFilesByType(MimeType.GOOGLE_SLIDES);
+  while (files.hasNext()) {
+    var file = files.next();
+    var fileId = file.getId();
+
+    var url = "https://www.googleapis.com/drive/v3/files/" + fileId + "/export?mimeType=application%2Fpdf";
+    var options = {
+      headers: {
+        Authorization: "Bearer " + ScriptApp.getOAuthToken(),
+      },
+      muteHttpExceptions: true,
+    };
+    var response = UrlFetchApp.fetch(url, options);
+    var pdfBlob = response.getBlob();
+    outputFolder.createFile(pdfBlob).setName(file.getName() + ".pdf");
+  }
+
+  Logger.log("Seluruh file slide berhasil diekspor ke PDF.");
+}
